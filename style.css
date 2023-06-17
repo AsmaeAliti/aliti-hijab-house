@@ -1,0 +1,733 @@
+* {
+  margin: 0%;
+  scroll-behavior: smooth;
+}
+
+/* loading */
+.all {
+  height: 100vh;
+  animation: fadeOut 1s 5.8s;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeOut {
+  from {
+    height: 100vh;
+  }
+  to {
+    height: 0vh;
+  }
+}
+
+.myImg {
+  animation: fadeIn 2s;
+  margin: auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 85px;
+  padding-left: 15px;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.img {
+  animation: getSmaller 2s 2s;
+  animation-fill-mode: forwards;
+  width: 600px;
+}
+
+@keyframes getSmaller {
+  0% {
+    height: 300px;
+    width: 600px;
+  }
+  100% {
+    height: 50px;
+    width: 100px;
+  }
+}
+
+.up {
+  animation: goUp 2s 4s;
+  animation-fill-mode: forwards;
+}
+@keyframes goUp {
+  0% {
+    height: 100vh;
+    width: 100%;
+  }
+  50% {
+    height: 30px;
+    width: 100%;
+
+    margin: 10px;
+  }
+  100% {
+    height: 60px;
+    margin: 10px;
+    width: 20%;
+  }
+}
+
+.allPage {
+  opacity: 0;
+  animation: fadeThePage 1s 4.9s;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeThePage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* end */
+
+header {
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  text-align: center;
+}
+nav {
+  font-family: "Tenor Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10% 10px 10%;
+  text-align: center;
+  background-color: #ffff;
+  position: fixed;
+  top: 0;
+  transition: background 1s ease;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  background-color: transparent;
+  padding-bottom: 3px;
+  margin-right: 10px;
+  text-align: center;
+}
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+nav a {
+  text-decoration: none;
+  background-color: transparent;
+  color: black;
+  margin-left: 30px;
+  border-bottom: 0px solid black;
+}
+
+nav li a:after {
+  content: "";
+  display: block;
+  margin: auto;
+  height: 3px;
+  width: 0px;
+  background: transparent;
+  transition: width 0.5s ease, background-color 0.5s ease;
+}
+
+nav li a:hover:after,
+nav li a:hover.active {
+  width: 110%;
+  background: black;
+}
+.logo {
+  height: 50px;
+  width: 100px;
+}
+/* nav menuIcon */
+.navMenu {
+  width: 40px;
+  height: 10px;
+  position: relative;
+  margin: 10px auto;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+.navMenu span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .4s ease-in-out;
+  -moz-transition: .4s ease-in-out;
+  -o-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
+}
+.navMenu:nth-child(1) span{
+    background: black; 
+}
+.navMenu:nth-child(2) span{
+  background: azure; 
+}
+.navMenu span:nth-child(1) {
+  top: 0px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+.navMenu span:nth-child(2) {
+  top: 10px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+.navMenu span:nth-child(3) {
+  top: 20px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+.navMenu.open span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 0px;
+  left: 8px;
+}
+.navMenu.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.navMenu.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 27px;
+  left: 8px;
+}
+
+
+#Home {
+  background-image: url(images/Screenshot_139.png);
+  background-attachment: fixed;
+  height: 90vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  display: flex;
+}
+@media screen and (max-width: 1230px) {
+  #Home {
+    height: 100vh;
+    width: 100vw;
+    display: block;
+  }
+  .sayHi {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+  }
+  .sayHi span {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 578px) {
+  #Home {
+    height: 100vh;
+    width: 100vw;
+    display: block;
+  }
+  .sayHi {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+  }
+  .sayHi span {
+    font-size: 20px;
+  }
+}
+.home2 {
+  background-color: rgb(224, 205, 205);
+  background-color: rgba(255, 255, 255, 0.4);
+  color: black;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.sayHi {
+  font-family: serif;
+  position: absolute;
+  top: 200px;
+  left: 150px;
+  width: 55%;
+  animation: sayHiT 2.5s ease;
+  justify-content: left;
+  font-family: "cinzel decorative", cursive;
+  text-align: start;
+  border-bottom: 1px solid #000;
+}
+.sayHi span {
+  font-size: 75px;
+}
+@keyframes sayHiT {
+  from {
+    left: 600px;
+  }
+  to {
+    left: 150px;
+  }
+}
+
+p ,h5{
+  font-family: "Tenor Sans", sans-serif;
+}
+
+.aboutUs {
+  display: flex;
+  margin: 100px;
+}
+
+#aboutUsVd {
+  width: 50%;
+  text-align: center;
+  position: relative;
+  height: 620px;
+}
+
+#aboutUsText {
+  width: 50%;
+  text-align: center;
+  height: 300px;
+  position: relative;
+}
+#text {
+  margin: 150px 0 0 0;
+}
+#aboutUsText h2 {
+  font-family: "cinzel decorative", cursive;
+}
+@media (max-width: 900px) {
+  section h1 {
+    font-size: 2rem;
+    /* text-align: center; */
+  }
+  section .text-container {
+    flex-direction: column;
+  }
+  .aboutUs {
+    display: block;
+  }
+  #aboutUsText,
+  #aboutUsVd {
+    width: 100%;
+    margin-bottom: 200px;
+    position: static;
+  }
+  
+  /*  btn's shadow */
+
+  /* reveal */
+}
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* socials  */
+
+.dropUpMenu {
+  cursor: pointer;
+  color: whitesmoke;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  background-color: whitesmoke;
+  border: 1.5px solid black;
+  position: absolute;
+  /* right: 0px; */
+
+  position: sticky;
+  /* position: fixed; */
+  top: 500px;
+  right: 50px;
+  
+}
+
+.dropUpMenu :hover{
+  /* background-color: rgb(241, 230, 230); */
+  border-radius: 50%;
+  /* border: 1px solid black; */
+
+}
+.Child {
+  color: white;
+  border-radius: 50%;
+  height: 0;
+  overflow: hidden;
+  list-style: none;
+  font-size: 20px;
+  transition: all 0.8s ease;
+}
+.dropUpMenu .child li{
+  background-image: url(images/instagram.png);
+  height: 50px;
+  width: 50px;
+}
+.dropUpMenu:hover > .Child {
+  height: 50px;
+  transform: translateY(-250px);
+}
+#facebook{
+  background-image: url(images/darkFbIcon.png);
+  /* margin-left: -53px;margin-top: -9px */
+  margin-left: -40px;margin-top: -0px;
+}
+#facebook:hover{
+  background-image: url(images/coloredFbIcon.png);
+}
+#instagram:hover{
+  background-image: url(images/coloredIgIcon.png);
+}
+#whatsapp:hover{
+  background-image: url(images/coloredWtspIcon.png);
+}
+#instagram{
+  background-image: url(images/darkIgIcon.png);
+  margin-left: -40px;margin-top: -0px;
+}
+#whatsapp{
+  background-image: url(images/drakWtspIcon.png);
+  /* margin-left: -53px;margin-top: -9px; */
+  margin-left: -40px;margin-top: -0px;
+}
+#facebook, #instagram, #whatsapp{
+  height: 45px;
+  width: 45px;
+  background-size: cover;
+}
+.Child:hover {
+  background-color: rgb(241, 230, 230);
+}
+.stickySoc{
+  height: 700px;
+  height: 1500px;
+  display: flex;
+  justify-content: end;
+}
+
+
+/* scrollTop */
+
+.imgsSection1 {
+  background-image: url(images/imageA.png), url(images/imageA2.png), url(images/imageA3.png), url(images/white.jpg);
+  background-position: left bottom,  center bottom,  right bottom, left top;
+  background-repeat: no-repeat,  no-repeat,  no-repeat, repeat;
+  background-size: contain ;
+  background-attachment: fixed, fixed, fixed, local;
+  width: 30%, 30%, 30%, 100%;
+  height: 700px;
+  margin-bottom: 15px;
+  opacity: 0;
+  transition: 1s all ease;
+
+}
+.imgsSection1.active{
+  opacity: 1;
+}
+.imgsSection2 {
+  background-image: url(images/imageA4.png), url(images/imageA5.png), url(images/imageA6.png), url(images/white.jpg);
+  background-position: left bottom,  center bottom,  right bottom, left top;
+  background-repeat: no-repeat,  no-repeat,  no-repeat, repeat;
+  background-size:  contain ;
+  background-attachment: fixed, fixed, fixed, local;
+  width: 30%, 30%, 30%, 100%;
+  height: 700px;
+  opacity: 0;
+  transition: 1s all ease;
+}
+.imgsSection2.active{
+  opacity: 1;
+}
+@media (max-width: 992px ) {
+  .imgsSection1 {
+    background-image: url(images/imageA.png), url(images/imageA2.png),  url(images/white.jpg);
+    background-position: left bottom,   right bottom, left top;
+    background-repeat: no-repeat,    no-repeat, repeat;
+    background-size: contain ;
+    background-attachment: fixed, fixed,local;
+    width: 50%, 50%,  100%;
+    height: 500px;
+    margin-bottom: 15px;
+  }
+  .imgsSection2 {
+    background-image: url(images/imageA4.png),  url(images/imageA6.png), url(images/white.jpg);
+    background-position: left bottom,  right bottom, left top;
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-size:  contain ;
+    background-attachment:  fixed, fixed, local;
+    width: 50%, 50%, 100%;
+    height: 500px;
+  }
+}
+@media (max-width:  768px) {
+  .imgsSection1 {
+    background-image: url(images/imageA.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain ;
+    background-attachment: fixed;
+    width: 100%;
+    height: 500px;
+    margin-bottom: 15px;
+
+  }
+  .imgsSection2 {
+    background-image: url(images/imageA4.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size:  contain ;
+    background-attachment:  fixed;
+    width: 100%;
+    height: 500px;
+  }
+  .sayHi{
+  position: absolute;
+  top: 60px;
+  left: 15px;
+
+  }
+  .sayHi span {
+    font-size: 67px;
+  }
+  
+}
+/* keep in touch section */
+body{
+  transition: background 1s ease;
+}
+.keepInTouch{
+  margin-top: 200px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 400px;
+}
+.keepInTouch h1 {
+  font-family: "cinzel decorative", cursive;
+  color: gray;
+}
+.keepInTouch h5{
+  color: gray;
+
+}
+#darkNavbar{
+  background-color: #1e1e1e;
+  display: none;
+}
+
+.revealKSection {
+  position: relative;
+  transform: translate(-150px);
+  opacity: 0;
+  transition: 1s all ease;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+.revealKSection.active {
+  transform: translate(0px);
+  opacity: 1;
+}
+.kITText hr{
+  height: 1px;
+  width: 60%;
+  background-color: #ccc;
+  border: none;
+}
+hr{
+  background-color: #393939;
+  height: .5px;
+
+}
+
+
+/* form */
+/* .form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+input + .form-control-placeholder {
+  position: absolute;
+  transition: all 200ms;
+  top: -20px;
+  bottom: 10px;
+  font-size: 20px;
+  opacity: 1;
+  color: white;
+}
+
+input:placeholder-shown + .form-control-placeholder {
+    position: absolute;
+    pointer-events: none;
+    left: 20px;
+    top:10px;
+    transition: 0.2s ease all;
+    color: #999999;
+    font-size: 120%;
+}
+
+.form-control:focus + .form-control-placeholder {
+    position: absolute;
+    transition: all 200ms;
+    top: -15px;
+    bottom: 10px;
+    font-size: 20px;
+    opacity: 1;
+    font-size: 16px;
+    color: rgb(130, 130, 130);
+    background-color: transparent;
+}
+input[type="email"]{
+    width: 45%;
+    padding: 10px 20px 0 20px;
+    border: none;
+    font-size: 140%;
+    color: rgb(123, 123, 123);
+    opacity: .3;
+    border-bottom: 1px solid #999;
+    background-color: transparent;
+
+}
+input[type="email"]:focus{
+  background-color: transparent;
+
+}
+label{
+    position: absolute;
+    pointer-events: none;
+    left: 20px;
+    top: 10px;
+    transition: 0.2s ease all;
+    color: #999999;
+    font-size: 120%;
+} */
+.kITImgs{
+  display: flex;
+  width: 40%;
+  justify-content: flex-end;
+}
+.kITText{
+  width: 60%;
+}
+@media screen and (max-width:900px) {
+  .keepInTouch{
+    display: block;
+  }
+  .kITImgs{
+    display: none;
+    width: 0%;
+  }
+  .kITText{
+    width:100%;
+  }
+}
+@media screen and (min-width:900px){
+  .icon{
+    display: none;
+  }
+}
+/* don't forget the media query for the images
+it is in the .keepInTouch
+u have to remove display flex
+wa hada jhdi elk ila mafhamtichi gha syeb rask */
+.KITImg1{
+  background-image: url(images/footer1.png);
+  height: 300px;
+  width: 350px;
+  border: 4px solid white;
+  margin: 25px 10px 25px 25px ;
+  transform: rotate(8deg);
+  background-size: cover;
+}
+.KITImg2{
+  background-image: url(images/footer3.png);
+  height: 300px;
+  width: 350px;
+  border: 4px solid white;
+  transform: rotate(-7deg);
+  background-size: cover;
+}
+.smallIcons{
+  height: 20px;
+  width: 20px;
+}
+.kITText a{
+  color: #919191;
+  text-decoration: none;
+  transition: all .4s;
+}
+.kITText a:hover{
+  color: #ccc;
+  text-decoration: none;
+}
+.icon{
+  background-image: url(images/whiteIcon.png);
+  height: 100px;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+footer{
+  text-align: center;
+  color: #919191;
+  margin-top: 90px;
+  bottom: 10px;
+}
